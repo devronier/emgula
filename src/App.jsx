@@ -25,9 +25,20 @@ function App() {
       >
         {dark ? "🌞 Light Mode" : "🌙 Dark Mode"}
       </button>
-      <Header dark={dark} />
-      <Main dark={dark} />
-      <Footer dark={dark} />
+
+      {/* Contêiner principal flexível */}
+      <div className="flex flex-col min-h-screen">
+        {/* Header fixo no topo */}
+        <Header dark={dark} />
+
+        {/* Main flexível, esticando para ocupar o espaço */}
+        <main className="flex-grow">
+          <Main dark={dark} />
+        </main>
+
+        {/* Footer fixo no final */}
+        <Footer dark={dark} />
+      </div>
     </div>
   );
 }
